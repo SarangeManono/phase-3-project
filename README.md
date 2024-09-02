@@ -10,7 +10,7 @@
 
 ## **Overview**
 
-![image.png](attachment:image.png)
+![image.png](README_files/image.png)
 
 Our stakeholder will be SyriaTel, a telecom business. The purpose of this project is to provide SyriaTel with information that can be used to help in reducing how much money is lost because of customers who don't stick around very long. The project will involve building a classifier to predict a customer will stop doing business with the company soon.
 
