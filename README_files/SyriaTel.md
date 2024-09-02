@@ -1835,6 +1835,24 @@ After tuning the parameters for the random forest classifier using grid search o
 
 
 ```python
+# Assuming X_train and y_train are your training data
+logreg_two.fit(X_train, y_train)
+logreg_final.fit(X_train, y_train)
+best_model.fit(X_train, y_train)
+
+```
+
+
+
+
+<style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>RandomForestClassifier(criterion=&#x27;entropy&#x27;, max_depth=10, min_samples_leaf=3,
+                       min_samples_split=5, random_state=42)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier(criterion=&#x27;entropy&#x27;, max_depth=10, min_samples_leaf=3,
+                       min_samples_split=5, random_state=42)</pre></div></div></div></div></div>
+
+
+
+
+```python
 #drawing ROC curve for the above three models 
 
 # Compute ROC curves and AUC scores for each model
@@ -1862,63 +1880,22 @@ plt.show()
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    NotFittedError                            Traceback (most recent call last)
-
-    Cell In[37], line 11
-          9 for model, label in zip(models, labels):
-         10     if hasattr(model, "predict_proba"):
-    ---> 11         y_probs = model.predict_proba(X_test)[:, 1]
-         12     else:
-         13         y_probs = model.predict(X_test)
     
-
-    File ~\anaconda3\Lib\site-packages\sklearn\linear_model\_logistic.py:1362, in LogisticRegression.predict_proba(self, X)
-       1336 def predict_proba(self, X):
-       1337     """
-       1338     Probability estimates.
-       1339 
-       (...)
-       1360         where classes are ordered as they are in ``self.classes_``.
-       1361     """
-    -> 1362     check_is_fitted(self)
-       1364     ovr = self.multi_class in ["ovr", "warn"] or (
-       1365         self.multi_class == "auto"
-       1366         and (
-       (...)
-       1369         )
-       1370     )
-       1371     if ovr:
+![png](output_85_0.png)
     
-
-    File ~\anaconda3\Lib\site-packages\sklearn\utils\validation.py:1390, in check_is_fitted(estimator, attributes, msg, all_or_any)
-       1385     fitted = [
-       1386         v for v in vars(estimator) if v.endswith("_") and not v.startswith("__")
-       1387     ]
-       1389 if not fitted:
-    -> 1390     raise NotFittedError(msg % {"name": type(estimator).__name__})
-    
-
-    NotFittedError: This LogisticRegression instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
-
-
-
-    <Figure size 800x600 with 0 Axes>
 
 
 Based on the AUC curves shown above, we can deduce the following:
 
- - **Decision Tree has an AUC of 0.92:** This indicates that the Decision Tree model has excellent discriminatory power and is highly effective at distinguishing between the positive (churn) and negative (non-churn) classes. It achieves a high true positive rate (TPR) while maintaining a low false positive rate (FPR), resulting in a larger area under the ROC curve.
+ - **Decision Tree has an AUC of 0.93:** This indicates that the Decision Tree model has excellent discriminatory power and is highly effective at distinguishing between the positive (churn) and negative (non-churn) classes. It achieves a high true positive rate (TPR) while maintaining a low false positive rate (FPR), resulting in a larger area under the ROC curve.
 
  - **Random Forest has an AUC of 0.82:** The Random Forest model performs well but slightly lower than the Decision Tree classifier. It has a good ability to classify the two classes correctly, but it may have slightly higher false positive and false negative rates compared to the Decision Tree.
 
- - **Logistic Regression has an AUC of 0.82:** The Logistic Regression model performs on par with the Random Forest model in terms of discrimination. However, it still falls behind the Decision Tree model in its ability to correctly classify positive and negative instances, leading to a smaller area under the ROC curve.
+ - **Logistic Regression has an AUC of 0.83:** The Logistic Regression model performs almost on par with the Random Forest model in terms of discrimination. However, it still falls behind the Decision Tree model in its ability to correctly classify positive and negative instances, leading to a smaller area under the ROC curve.
 
  - **Comparison**: The Decision Tree has the largest area under the ROC curve, followed by the Random Forest and Logistic Regression, indicating that the Decision Tree has the best overall discriminatory power and performs better in distinguishing between the positive and negative classes.
 
  - Hence, the Decision Tree Classifier appears to be the best model for SyriaTel, as it has the largest area under the curve (AUC) and also shows the highest accuracy in predicting customer churn.
-
 **Conclusion**
 
 Using the best model, which is the **Decision Tree**, SyriaTel company will be able to achieve a lot by:
